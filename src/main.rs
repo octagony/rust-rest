@@ -1,6 +1,8 @@
 use ntex::web;
 use std::io;
+// mods
 mod services;
+mod errors;
 
 #[web::get("/")]
 async fn index()-> &'static str{
