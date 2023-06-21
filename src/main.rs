@@ -13,6 +13,7 @@ async fn index()-> &'static str{
 async fn main() -> io::Result<()> {
     web::server(||{
         web::App::new()
+        .configure(services::openapi::ntex_config)
         .configure(services::dogs::ntex_config)
         .default_service(web::route().to(services::default))
     } )
